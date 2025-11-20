@@ -53,3 +53,13 @@
   color: var(--primary);
   font-weight: 600;
 }
+
+.success-message {
+    background-color: #dcfce7;
+    color: #10b981;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}

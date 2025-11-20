@@ -1,14 +1,8 @@
 import api from './api';
 
-const authService = {
-  // Registro de usuario: Envía datos y si es exitoso, guarda la sesión
+  const authService = {
   async register(userData) {
     const response = await api.post('/auth/register', userData);
-    if (response.data.token) {
-      // Guardamos el token y el usuario en el navegador para persistir la sesión
-      localStorage.setItem('token', response.data.token);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-    }
     return response.data;
   },
 

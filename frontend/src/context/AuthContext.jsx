@@ -26,18 +26,17 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  // Función de Login: Llama al servicio y guarda el usuario en el estado
+  // Función de Login
   const login = async (email, password) => {
     const data = await authService.login(email, password);
     setUser(data.user);
     return data;
   };
 
-  // Función de Registro
   const register = async (userData) => {
-    const data = await authService.register(userData);
-    setUser(data.user);
-    return data;
+  const data = await authService.register(userData);
+
+  return data;
   };
 
   // Función de Salir: Limpia el estado y el almacenamiento local

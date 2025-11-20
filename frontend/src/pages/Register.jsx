@@ -14,7 +14,7 @@ const Register = () => {
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  
+  const [successMessage, setSuccessMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const { register } = useAuth();
@@ -30,6 +30,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    setSuccessMessage('');
     setLoading(true);
 
     // Validación del lado del cliente
@@ -41,13 +42,19 @@ const Register = () => {
 
     try {
       await register(formData);
-      // Si el registro sale bien, vamos directo al panel
-      navigate('/dashboard');
+      // Si el registro sale bien, mostramos éxito y redirección
+      setSuccessMessage('¡Cuenta creada correctamente! Serás redirigido a Iniciar Sesión.');
+      
+      // Detenemos la carga y esperamos 2 segundos
+      setLoading(false); 
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000); 
+
     } catch (err) {
       setError(err.response?.data?.message || 'Error al registrarse. Intente nuevamente.');
-    } finally {
       setLoading(false);
-    }
+    } 
   };
 
   return (
@@ -138,6 +145,7 @@ const Register = () => {
           </div>
 
           {error && <div className="error">{error}</div>}
+          {successMessage && <div className="success-message">{successMessage}</div>}
 
           <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
             {loading ? 'Registrando...' : 'Registrarse'}
