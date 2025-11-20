@@ -51,6 +51,12 @@
   background-color: #eef2ff;
 }
 
+.navbar-auth-links {
+    display: flex;
+    align-items: center;
+    gap: 16px; 
+}
+
 /* Sección de usuario */
 .navbar-user {
   display: flex;

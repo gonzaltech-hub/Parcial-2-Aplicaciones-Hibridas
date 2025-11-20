@@ -6,7 +6,7 @@
   background-color: #f8fafc;
   background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
   background-size: 24px 24px;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .auth-card {
