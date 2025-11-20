@@ -1,0 +1,181 @@
+/* Contenedor principal */
+.incident-detail-page {
+  padding: 40px 0;
+  min-height: calc(100vh - 70px);
+  background-color: var(--bg-body);
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.incident-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.incident-detail-header {
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.incident-detail-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.incident-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* --- SECCIONES --- */
+.detail-section {
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e2e8f0;
+}
+
+.detail-section h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.detail-section p {
+  color: var(--text-main);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* --- INFORMACIÓN TÉCNICA --- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--text-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.info-value {
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* --- SECCIÓN ADMIN --- */
+.admin-section {
+  background-color: #fffbeb;
+  border: 1px solid #fcd34d;
+}
+
+.admin-section h3 {
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.admin-notes-display {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #fde68a;
+}
+
+.admin-form .form-group {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* --- SECCIÓN COMENTARIOS --- */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.comment-item {
+  background: #f8fafc !important;
+  padding: 16px 20px !important;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.comment-item:hover {
+  transform: translateX(4px);
+}
+
+.comment-item div:first-child {
+  margin-bottom: 8px;
+}
+
+.comment-item strong {
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.comment-item span {
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+.comment-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}

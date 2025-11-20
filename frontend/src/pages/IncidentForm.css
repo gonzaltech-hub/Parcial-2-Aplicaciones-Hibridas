@@ -1,0 +1,54 @@
+.incident-form-page {
+  padding: 40px 0;
+  min-height: calc(100vh - 70px);
+  background-color: var(--bg-body);
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-container h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.form-container .subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.incident-form {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid white;
+}
+
+.incident-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+  line-height: 1.6;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.form-actions button {
+  flex: 1;
+  height: 48px;
+}

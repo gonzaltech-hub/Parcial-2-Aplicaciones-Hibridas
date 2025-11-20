@@ -1,0 +1,31 @@
+{
+  "name": "fixit-backend",
+  "version": "1.0.0",
+  "description": "API Backend para FixIt - Sistema de Gestión de Mantenimiento de Consorcios",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch src/server.js",
+    "seed": "node seed.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "jwt",
+    "rest-api",
+    "backend",
+    "consorcios",
+    "mantenimiento"
+  ],
+  "author": "Agustín González",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.20.0"
+  }
+}

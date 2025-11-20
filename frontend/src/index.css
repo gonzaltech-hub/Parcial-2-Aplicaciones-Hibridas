@@ -1,0 +1,197 @@
+/* =========================================
+   VARIABLES GLOBALES
+   ========================================= */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #64748b;
+  --accent: #0ea5e9;
+  
+  /* Fondos y Superficies */
+  --bg-body: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-input: #f8fafc;
+
+  /* Textos */
+  --text-main: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+
+  /* Estados */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Bordes */
+  --radius: 12px;
+}
+
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================
+   COMPONENTES GLOBALES
+   ========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 8px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-secondary {
+  background-color: white;
+  color: var(--text-main);
+  border: 1px solid #e2e8f0;
+}
+.btn-secondary:hover { background-color: #f8fafc; border-color: #cbd5e1; }
+
+.btn-danger {
+  background-color: #fee2e2;
+  color: var(--danger);
+}
+.btn-danger:hover { background-color: #fecaca; }
+
+/* Inputs y Formularios */
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: var(--bg-input);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  color: var(--text-main);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  background-color: white;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================
+   BADGES
+   ========================================= */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Colores para prioridades */
+.badge-Baja { background-color: #dcfce7; color: #166534; }
+.badge-Media { background-color: #ffedd5; color: #9a3412; }
+.badge-Alta { background-color: #fee2e2; color: #991b1b; }
+
+/* Estados */
+.badge-Reportado { background-color: #e0f2fe; color: #075985; }
+.badge-En_Progreso { background-color: #f3e8ff; color: #6b21a8; }
+.badge-Resuelto { background-color: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+
+/* Roles */
+.badge-Administrador { background-color: #1e293b; color: white; }
+.badge-Inquilino { background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+
+/* Utilidades */
+.error { color: var(--danger); font-size: 0.85rem; margin-top: 6px; }
+.loading { text-align: center; padding: 40px; color: var(--text-light); font-weight: 500; }
+
+/* Oculta el icono de contraseña nativo de Edge */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+select,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
