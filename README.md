@@ -75,9 +75,13 @@ FixIt proporciona una solución digital para la gestión del mantenimiento de ed
 ## Endpoints de la API
 
 ### Autenticación (`/api/auth`)
-- `POST /register` - Registrar nuevo usuario
 - `POST /login` - Iniciar sesión
+- `POST /register` - Registrar nuevo usuario
 - `GET /me` - Obtener usuario actual
+
+### Usuarios (`/api/users`)
+- `GET /` - Obtener lista de todos los usuarios (Solo Admin)
+- `GET /:id` - Obtener detalle de un usuario por ID (Solo Admin)
 
 ### Reclamos (`/api/incidents`)
 - `GET /` - Obtener reclamos (Inquilino ve los suyos, Admin ve todos)
