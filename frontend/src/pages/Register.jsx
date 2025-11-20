@@ -9,6 +9,7 @@ const Register = () => {
     name: '',
     email: '',
     password: '',
+    confirmPassword: '',
     apartment: '',
     role: 'Inquilino'
   });
@@ -33,6 +34,12 @@ const Register = () => {
     setSuccessMessage('');
     setLoading(true);
 
+    if (formData.password !== formData.confirmPassword) {
+      setError('Las contraseñas no coinciden.');
+      setLoading(false);
+      return;
+    }
+
     // Validación del lado del cliente
     if (formData.password.length < 6) {
       setError('La contraseña debe tener al menos 6 caracteres.');
@@ -40,8 +47,10 @@ const Register = () => {
       return;
     }
 
+    const { confirmPassword, ...dataToSend } = formData;
+
     try {
-      await register(formData);
+      await register(dataToSend);
       // Si el registro sale bien, mostramos éxito y redirección
       setSuccessMessage('¡Cuenta creada correctamente! Serás redirigido a Iniciar Sesión.');
       
@@ -118,6 +127,22 @@ const Register = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
+          </div>
+
+          <div className="form-group">
+            <label>Confirmar Contraseña</label>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <input
+                type={showPassword ? "text" : "password"}
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+                minLength={6}
+                placeholder="Repite la contraseña"
+                style={{ paddingRight: '40px', width: '100%' }}
+              />
+          </div>
           </div>
 
           <div className="form-group">
