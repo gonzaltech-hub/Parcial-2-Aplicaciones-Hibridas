@@ -189,4 +189,4 @@ Este proyecto fue desarrollado como parte de una asignación académica para la 
 
 ## Autor
 
-**González Agustín** - Parcial 2
+**González Agustín** - Parcial 2.
