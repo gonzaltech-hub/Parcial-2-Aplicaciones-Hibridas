@@ -1,0 +1,17 @@
+.main-footer {
+    background-color: var(--bg-card);
+    color: var(--text-secondary);
+    border-top: 1px solid #e2e8f0;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: auto;
+    width: 100%;
+}
+
+.main-footer .container {
+    padding: 0 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
