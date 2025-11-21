@@ -24,7 +24,6 @@ export const login = async (req, res, next) => {
     const result = await authService.login(email, password);
     res.json(result);
   } catch (error) {
-    // 401 Unauthorized: Credenciales inválidas
     res.status(401);
     next(error);
   }
