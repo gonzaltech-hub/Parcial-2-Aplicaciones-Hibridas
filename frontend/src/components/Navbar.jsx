@@ -41,6 +41,9 @@ const Navbar = () => {
           ) : (
           // Si no esta logeado se muestra los botones de acceso
           <div className="navbar-auth-links">
+            <Link to="/about" className="navbar-link">
+              ¿Qué es FixIt?
+            </Link>
             <Link to="/login" className="btn btn-secondary">
               Iniciar Sesión
             </Link>
@@ -48,7 +51,7 @@ const Navbar = () => {
               Registrarse
             </Link>
           </div>
-        )}
+          )}
       </div>
     </nav>
   );
