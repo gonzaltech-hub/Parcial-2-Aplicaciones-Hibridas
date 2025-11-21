@@ -22,7 +22,7 @@ Thumbs.db
 *.swo
 *~
 
-# Testing y logs
+# Testing/logs
 coverage/
 *.log
 logs/
