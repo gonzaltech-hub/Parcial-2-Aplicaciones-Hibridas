@@ -39,23 +39,25 @@ FixIt proporciona una solución digital para la gestión del mantenimiento de ed
 ### 1. Modelo de Usuario (User)
 ```javascript
 {
-  name: String (requerido),
-  email: String (requerido, único),
-  password: String (requerido, encriptada),
+  name: String (requerido, 2-50 caracteres),
+  email: String (requerido, único, validado con regex),
+  password: String (requerido, mínimo 6 caracteres, encriptada),
   role: String (enum: ['Inquilino', 'Administrador'], default: 'Inquilino'),
-  apartment: String (requerido)
+  apartment: String (requerido),
+  timestamps: true
 }
 ```
 
 ### 2. Modelo de Reclamo (Incident)
 ```javascript
 {
-  title: String (requerido),
-  description: String (requerido),
+  title: String (requerido, 3-100 caracteres),
+  description: String (requerido, 10-500 caracteres),
   location: String (requerido),
   priority: String (enum: ['Baja', 'Media', 'Alta'], default: 'Media'),
   status: String (enum: ['Reportado', 'En Progreso', 'Resuelto'], default: 'Reportado'),
-  adminNotes: String (opcional),
+  adminNotes: String (opcional, máximo 300 caracteres),
+  photo: String (placeholder para V2.0 - futura integración),
   createdBy: ObjectId (ref: User),
   updatedBy: ObjectId (ref: User),
   timestamps: true
