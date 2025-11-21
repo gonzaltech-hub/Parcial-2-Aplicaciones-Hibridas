@@ -14,8 +14,6 @@ export const addComment = async (req, res) => {
       author: req.user._id
     });
 
-    // Poblamos los datos del autor (nombre/email) para que el Frontend
-    // pueda mostrar "Juan Pérez" inmediatamente sin recargar la página
     await comment.populate('author', 'name email');
 
     res.status(201).json(comment);
