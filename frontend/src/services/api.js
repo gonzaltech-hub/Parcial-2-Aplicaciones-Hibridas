@@ -22,9 +22,9 @@ api.interceptors.request.use(
   }
 );
 
-// Interceptor de Respuesta):
+// Interceptor de Respuesta:
 // Monitorea las respuestas del servidor. Si recibimos un error 401 (No Autorizado),
-// significa que el token venció o es inválido, así que cerramos la sesión de manera forzada.
+// significa que el token venció o es inválido, asique cerramos la sesión de manera forzada.
 api.interceptors.response.use(
   (response) => response,
   (error) => {
