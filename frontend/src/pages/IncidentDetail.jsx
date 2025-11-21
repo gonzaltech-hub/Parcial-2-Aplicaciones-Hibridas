@@ -151,17 +151,28 @@ const IncidentDetail = () => {
               </div>
             </div>
 
-            {/* --- ADMINISTRADOR --- */}
             {isAdmin() && (
               <div className="detail-section admin-section">
                 <h3>Acciones del Administrador</h3>
                 {!editing ? (
                   <div>
+                    {incident.adminNotes && (
+                      <div style={{ 
+                        background: '#fff3cd', 
+                        padding: '12px', 
+                        borderRadius: '5px', 
+                        marginBottom: '12px',
+                        borderLeft: '4px solid #ffc107'
+                      }}>
+                        <strong>Notas actuales:</strong>
+                        <p style={{ margin: '5px 0 0 0' }}>{incident.adminNotes}</p>
+                      </div>
+                    )}
                     <button onClick={() => setEditing(true)} className="btn btn-primary">
-                      Cambiar Estado
+                      Editar Estado y Notas
                     </button>
                   </div>
-                ) : (
+                  ) : (
                   <form onSubmit={handleUpdate} className="admin-form">
                     <div className="form-group">
                       <label>Nuevo Estado</label>
@@ -174,6 +185,17 @@ const IncidentDetail = () => {
                         <option value="En Progreso">En Progreso</option>
                         <option value="Resuelto">Resuelto</option>
                       </select>
+                    </div>
+                    <div className="form-group">
+                      <label>Notas del Administrador</label>
+                      <textarea
+                        name="adminNotes"
+                        value={formData.adminNotes}
+                        onChange={handleChange}
+                        placeholder="Agrega notas sobre el progreso..."
+                        rows="4"
+                        style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ddd' }}
+                      />
                     </div>
                     <div className="form-actions">
                       <button
@@ -192,6 +214,19 @@ const IncidentDetail = () => {
               </div>
             )}
 
+            {!isAdmin() && incident.adminNotes && (
+              <div className="detail-section">
+                <h3>Notas del Administrador</h3>
+                <div style={{ 
+                  background: '#e7f3ff', 
+                  padding: '12px', 
+                  borderRadius: '5px',
+                  borderLeft: '4px solid #0066cc'
+                }}>
+                  <p>{incident.adminNotes}</p>
+                </div>
+              </div>
+            )}
             {/* --- COMENTARIOS --- */}
             <div className="detail-section comments-section">
               <h3>Actividad y Comentarios</h3>

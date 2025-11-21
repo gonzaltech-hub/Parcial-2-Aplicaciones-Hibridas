@@ -73,7 +73,9 @@ class IncidentService {
     }
 
     await incident.save();
-    return await incident.populate('createdBy updatedBy', 'name email apartment');
+    return await Incident.findById(incidentId)
+    .populate('createdBy', 'name email apartment')
+    .populate('updatedBy', 'name email');
   }
 
   async deleteIncident(incidentId, userRole, userId) {
